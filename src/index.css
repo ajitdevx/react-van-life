@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --bg-color: #FFF7ED;
+    --color-primary: #000000;
+    --color-anchor: #4D4D4D;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html,
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--bg-color);
+    color: var(--color-primary);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/** header **/
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header .site-logo {
+    color: black;
+    margin-right: auto;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 25px;
+}
+
+header a {
+    text-decoration: none;
+    color: #4D4D4D;
+    font-weight: 600;
+    padding: 5px 20px;
+}
+
+header a:hover {
+    color: #161616;
+    text-decoration: underline;
+}
+
+/** main **/
+
+main {
+    flex: 1;
+    /* This allows the main section to grow and take up available space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-container {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("./assets/images/home-hero.png") no-repeat center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: left;
+    padding: 50px 20px;
+    min-height: 60vh;
+    width: 100%;
+}
+
+.hero-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.hero-container p {
+    font-size: 1.2rem;
+}
+
+.hero-container a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FF8C38;
+    border: none;
+    width: 100%;
+    margin-top: 27px;
+    padding-block: .75rem;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .1s ease-in-out;
+}
+
+.home-container a:hover {
+    transform: translate(1px, 1px);
+}
+
+/** footer **/
+
+footer {
+    background-color: #252525;
+    color: #AAAAAA;
+    padding: 1.5rem;
+    text-align: center;
+}
