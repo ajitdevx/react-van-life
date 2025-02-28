@@ -2,6 +2,10 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router"
 import Home from "./pages/Home"
 import About from "./pages/About"
+import Vans from "./pages/Vans"
+import VanDetail from "./pages/VanDetail"
+
+import "./server"
 
 export default function App() {
 
@@ -10,13 +14,15 @@ export default function App() {
       <header>
         <Link to="/" className="site-logo">#VANLIFE</Link>
         <nav>
-          <Link to="/" >Home</Link>
           <Link to="/about">About</Link>
+          <Link to="/vans" >Vans</Link>
         </nav>
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/vans" element={<Vans />} />
+        <Route path="/vans/:id" element={<VanDetail />} />
       </Routes>
     </BrowserRouter>
   )

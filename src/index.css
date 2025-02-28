@@ -171,6 +171,7 @@ footer {
 .vans-page-container .title {
     font-size: 1.5rem;
     font-weight: bold;
+    font-family: "Inter", sans-serif;
 }
 
 .vans-page-content {
@@ -186,6 +187,7 @@ footer {
 
 .card img {
     width: 200px;
+    border-radius: 5px;
 }
 
 .card-body {
@@ -194,15 +196,82 @@ footer {
     gap: 8px 20px;
 }
 
-.card-body .link-button {
+.card-body .van-type {
     display: inline-block;
     text-align: center;
-    text-decoration: none;
-    background-color: #E17654;
+    text-decoration: none;    
     color: #FFEAD0;
     font-weight: 700;
     font-size: .8rem;
     border-radius: 5px;
     cursor: pointer;
     padding: 5px 30px;
+    text-transform: capitalize;
+}
+
+.van-type.rugged {
+    background-color: #115E59;
+}
+
+.van-type.luxury {
+    background-color: #161616;
+}
+
+
+.van-type.simple {
+    background-color: #E17654;
+}
+
+.van-page-container {
+    text-align: center;
+}
+
+/** **/
+.van-detail-container .back-button {
+    color: black;
+    text-decoration: none;
+}
+
+.van-detail-container .back-button:visited {
+    
+}
+
+.van-detail-container .back-button span {
+    text-decoration: underline;
+}
+
+.van-detail {
+    display: flex;
+    flex-direction: column;
+    color: #161616;
+}
+
+.van-detail img {
+    border-radius: 5px;
+    margin-block: 47px;
+}
+
+.van-detail h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.van-detail > i {
+    align-self: flex-start;
+}
+
+.van-detail .van-price {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.van-detail .van-price span {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.van-detail .link-button {
+    background-color: #FF8C38;
+    color: white;
+    font-size: 1.125rem;
 }
