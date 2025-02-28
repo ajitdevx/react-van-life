@@ -158,10 +158,51 @@ footer {
     text-decoration: none;
     background-color: #161616;
     color: white;
-    color: white;
     font-weight: 700;
     border-radius: 5px;
     cursor: pointer;
     padding: 15px 40px;
     margin-top: 30px;
+}
+
+
+/** van page **/
+
+.vans-page-container .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.vans-page-content {
+    margin-top: 20px;
+    display: grid;
+    grid-template: auto auto / 1fr 1fr;
+    gap: 30px;
+}
+
+.card {
+    width: 200px;
+}
+
+.card img {
+    width: 200px;
+}
+
+.card-body {
+    display: grid;
+    grid-template: auto auto / 1fr .5fr;
+    gap: 8px 20px;
+}
+
+.card-body .link-button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #E17654;
+    color: #FFEAD0;
+    font-weight: 700;
+    font-size: .8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 30px;
 }
