@@ -120,3 +120,48 @@ footer {
     padding: 1.5rem;
     text-align: center;
 }
+
+/** about **/
+
+.about-page-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    flex-shrink: 1;
+}
+
+.about-hero-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: fill;
+}
+
+.about-page-content {
+    padding: 30px;
+    margin: 10px 0px;
+}
+
+.about-page-content p {
+    margin: 30px 5px 0px 0px;
+}
+
+.about-page-ctx {
+    padding: 30px;
+    background-color: #FFCC8D;
+    margin: 10px 30px;
+    border-radius: 10px;
+}
+
+.about-page-ctx .link-button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #161616;
+    color: white;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 15px 40px;
+    margin-top: 30px;
+}
