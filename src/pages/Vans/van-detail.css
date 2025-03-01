@@ -1,0 +1,42 @@
+.van-detail-container {
+    width: 60%;
+}
+
+.van-detail {
+    width: 100%;
+    flex-shrink: 1;
+    color: #161616;
+}
+
+.van-detail img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: fill;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+.van-detail p,
+.van-detail h2 {
+    margin-top: 18px;
+}
+
+.van-detail>i {
+    margin-top: 18px;
+}
+
+.btn-rent-van {
+    background-color: #FF8C38;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    color: #FFFFFF;
+    width: 300px;
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: "Inter", sans-serif;
+    margin: 12px 0;
+    text-align: center;
+    text-decoration: none;
+}

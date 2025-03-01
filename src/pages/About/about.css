@@ -1,0 +1,64 @@
+main {
+    margin-bottom: 20px;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-page-container {
+    width: 80%;
+    overflow: hidden;
+    border-radius: 5px;
+    flex-shrink: 1;
+}
+
+.about-page-container .about-hero-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: fill;
+}
+
+.about-page-content {
+    margin-top: 60px;
+    color: #161616;
+}
+
+.about-page-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+.about-page-content p {
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+.about-page-cta {
+    background-color: #FFCC8D;
+    color: #161616;
+    padding-inline: 32px;
+    padding-bottom: 40px;
+    margin-top: 27px;
+    border-radius: 5px;
+}
+
+.about-page-cta h2 {
+    margin: 0;
+    padding: 37px 0px;
+}
+
+.about-page-cta .link-button {
+    background-color: #161616;
+    color: white;
+    border-radius: 10px;
+    padding: 18px 20px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+footer {
+    position: sticky;
+}
