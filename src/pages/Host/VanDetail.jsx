@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams, NavLink, Outlet, Link } from "react-router";
+import { useParams, NavLink, Outlet, Link, useOutletContext } from "react-router";
 
 export default function VanDetail() {
     const { id } = useParams();
@@ -44,7 +44,7 @@ export default function VanDetail() {
                                 <li><NavLink style={handleActiveStyle} to={`/host/vans/${id}/photos`}>Photos</NavLink></li>
                             </ul>
                         </nav>
-                        <Outlet />
+                        <Outlet context={[van]} />
                     </div>
                 </section>
             )}
@@ -52,20 +52,21 @@ export default function VanDetail() {
     )
 }
 
-const HostVanInfo = (props) => {
+const HostVanInfo = () => {
+    const [van] = useOutletContext();
     return (
         <div className="host-van-detail">
             <div className="name">
                 <strong>Name: </strong>
-                {props.name}
+                {van.name}
             </div>
             <div className="category">
                 <strong>Category: </strong>
-                {props.type}
+                {van.type}
             </div>
             <div className="description">
                 <strong>Description: </strong>
-                {props.description}
+                {van.description}
             </div>
             <div className="visibility">
                 <strong>Visibility: </strong>
@@ -75,22 +76,24 @@ const HostVanInfo = (props) => {
     )
 }
 
-const HostVanPricing = (props) => {
+const HostVanPricing = () => {
+    const [van] = useOutletContext();
     return (
         <div className="host-van-pricing">
             <h1>
                 <p className="van-price">
-                    <span>${props.price}</span>/day
+                    <span>${van.price}</span>/day
                 </p>
             </h1>
         </div>
     )
 }
 
-const HostVanPhoto = (props) => {
+const HostVanPhoto = () => {
+    const [van] = useOutletContext();
     return (
         <div className="host-van-photos">
-            <img src={props.imageUrl} alt={props.name} />
+            <img src={van.imageUrl} alt={van.name} />
         </div>
     )
 }
