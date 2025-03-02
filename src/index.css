@@ -62,12 +62,12 @@ header nav a:hover {
 footer {
     background-color: #252525;
     height: 70px;
-    position: sticky;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 0;
     width: 100%;
+    bottom: 0;
 }
 
 footer p {
@@ -76,7 +76,22 @@ footer p {
     font-size: .89rem;
 }
 
+main {
+    margin-bottom: 84px;
+}
+
 a,
 button {
     cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #4D4D4D;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #161616;
+    font-weight: bold;
 }
