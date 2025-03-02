@@ -18,15 +18,16 @@
     font-weight: 600;
 }
 
-nav ul li a:nth-child(1) {
+/* .host-nav nav ul li a:nth-child(1) {
     padding: 0 20px;
-}
+} */
 
 /*** host dashboard ***/
 
 .host-dashboard-hero,
 .host-dashboard-review,
-.host-dashboard-vans {
+.host-dashboard-vans,
+.host-van-container {
     width: 60%;
     background-color: #FFEAD0;
     padding: 30px 20px;
@@ -97,4 +98,49 @@ nav ul li a:nth-child(1) {
 .host-vans-list {
     padding-right: 30px;
     margin-top: 0px;
+}
+
+/** host van detail **/
+
+.host-van-container {
+    background-color: #FFFFFF;
+}
+
+.van-header {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.van-header img {
+    width: 200px;
+}
+
+.van-header-content>* {
+    margin: 30px 0px;
+}
+
+.host-van-container nav {
+    margin: 20px 0px;
+}
+
+.host-van-container nav a {
+    margin: 20px 0px;
+    text-align: left;
+}
+
+.host-van-detail>div {
+    padding-bottom: 20px;
+}
+
+.host-van-photos img {
+    width: 120px;
+}
+
+.host-van-container .link-go-back:hover {
+    text-decoration: underline;
+    color: #161616;
+    font-weight: bold;
 }

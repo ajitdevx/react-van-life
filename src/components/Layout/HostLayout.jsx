@@ -17,9 +17,10 @@ export default function HostLayout() {
             <section>
                 <nav className="host-nav">
                     <ul>
-                        <li><NavLink end style={handleActiveStyle} to="/host" className="nav-link">Dashboard</NavLink></li>
-                        <li><NavLink end style={handleActiveStyle} to="/host/income" className="nav-link">Income</NavLink></li>
-                        <li><NavLink end style={handleActiveStyle} to="/host/vans" className="nav-link">Vans</NavLink></li>
+                        <li><NavLink end style={handleActiveStyle} to="." className="nav-link">Dashboard</NavLink></li>
+                        <li><NavLink end style={handleActiveStyle} to="income" className="nav-link">Income</NavLink></li>
+                        <li><NavLink end style={handleActiveStyle} to="vans" className="nav-link">Vans</NavLink></li>
+                        <li><NavLink end style={handleActiveStyle} to="reviews" className="nav-link">Reviews</NavLink></li>
                     </ul>
                 </nav>
             </section>
