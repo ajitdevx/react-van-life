@@ -18,11 +18,6 @@
     font-weight: 600;
 }
 
-.host-nav ul a:hover {
-    text-decoration: underline;
-    color: #161616;
-}
-
 nav ul li a:nth-child(1) {
     padding: 0 20px;
 }
