@@ -9,7 +9,7 @@ import Layout from "./components/Layout/Layout"
 import "./server"
 import Dashboard from "./pages/Host/Dashboard"
 import Income from "./pages/Host/Income"
-import HostVans from "./pages/Vans/Vans"
+import HostVans from "./pages/Host/Vans"
 import HostLayout from "./components/Layout/HostLayout"
 
 export default function App() {
