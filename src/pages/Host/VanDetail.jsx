@@ -39,7 +39,7 @@ export default function VanDetail() {
                         </div>
                         <nav>
                             <ul>
-                                <li><NavLink end style={handleActiveStyle} to={`/host/vans/${id}`}>Details</NavLink></li>
+                                <li><NavLink end style={handleActiveStyle} to=".">Details</NavLink></li>
                                 <li><NavLink style={handleActiveStyle} to={`/host/vans/${id}/pricing`}>Pricing</NavLink></li>
                                 <li><NavLink style={handleActiveStyle} to={`/host/vans/${id}/photos`}>Photos</NavLink></li>
                             </ul>
