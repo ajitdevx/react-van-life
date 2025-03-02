@@ -10,7 +10,9 @@ import "./server"
 import Dashboard from "./pages/Host/Dashboard"
 import Income from "./pages/Host/Income"
 import HostVans from "./pages/Host/Vans"
+import HostVanDetail, { HostVanInfo, HostVanPricing, HostVanPhoto } from "./pages/Host/VanDetail"
 import HostLayout from "./components/Layout/HostLayout"
+import Reviews from "./pages/Host/Reviews"
 
 export default function App() {
 
@@ -28,6 +30,14 @@ export default function App() {
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="vans" element={<HostVans />} />
+
+            <Route path="vans/:id" element={<HostVanDetail />}>
+              <Route index element={<HostVanInfo />} />
+              <Route path="pricing" element={<HostVanPricing />} />
+              <Route path="photos" element={<HostVanPhoto />} />
+            </Route>
+
+            <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>
 
