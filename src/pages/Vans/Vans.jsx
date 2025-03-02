@@ -13,7 +13,7 @@ export default function Vans() {
 
     useEffect(() => {
         getVans();
-        
+
     }, []);
 
     const vanElements = vans && (
@@ -29,17 +29,15 @@ export default function Vans() {
     )
 
     return (
-        <main>
-            <section>
-                <div className="van-list-container">
-                    <h1>Explore our van options</h1>
+        <section>
+            <div className="van-list-container">
+                <h1>Explore our van options</h1>
 
-                    <div className="van-list">
-                        {vanElements}
-                    </div>
+                <div className="van-list">
+                    {vanElements}
                 </div>
-            </section>
-        </main>
+            </div>
+        </section>
     )
 }
 
