@@ -1,0 +1,19 @@
+.not-found-page-container {
+    width: 60%;
+}
+
+.back-to-home-page {
+    background-color: #161616;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    color: #FFFFFF;
+    width: 300px;
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: "Inter", sans-serif;
+    margin: 12px 0;
+    text-align: center;
+    text-decoration: none;
+}
