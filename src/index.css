@@ -85,7 +85,7 @@ button {
     cursor: pointer;
 }
 
-a {
+nav ul li a {
     text-decoration: none;
     color: #4D4D4D;
 }

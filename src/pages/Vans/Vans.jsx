@@ -22,7 +22,7 @@ export default function Vans() {
         ? vans.filter(van => van.type === typeFilter)
         : vans
 
-    console.log(filteredVans)
+    console.log(searchParams)
 
     const vanElements = filteredVans && filteredVans.map(van => (
         <VanCard
@@ -32,17 +32,17 @@ export default function Vans() {
             price={van.price}
             type={van.type}
             id={van.id} />
-    ))
+    ));
 
     return (
         <section>
             <div className="van-list-container">
                 <h1>Explore our van options</h1>
                 <div className="van-type-filter-container">
-                    <a className="van-type simple" onClick={() => setSearchParams({ type: 'simple' })}>Simple</a>
+                    <a className="van-type simple" onClick={() => setSearchParams("type=simple")}>Simple</a>
                     <a className="van-type rugged" onClick={() => setSearchParams({ type: 'rugged' })}>Rugged</a>
                     <a className="van-type luxury" onClick={() => setSearchParams({ type: 'luxury' })}>Luxury</a>
-                    <a className="van-type clear" onClick={() => setSearchParams({})}>Clear</a>
+                    {typeFilter && <a className="van-type clear" onClick={() => setSearchParams({})}>Clear</a>}
                 </div>
                 <div className="van-list">
                     {vanElements}
