@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router"
+import { Link, useSearchParams } from "react-router"
 import "./vans.css"
 
 export default function Vans() {
+    const [searchParams, setSearchParams] = useSearchParams();
     const [vans, setVans] = useState([]);
+    const typeFilter = searchParams.get("type");
 
     const getVans = () => {
         fetch('/api/vans')
@@ -16,23 +18,32 @@ export default function Vans() {
 
     }, []);
 
-    const vanElements = vans && (
-        vans.map(van => (
-            <VanCard
-                key={van.id}
-                imageUrl={van.imageUrl}
-                name={van.name}
-                price={van.price}
-                type={van.type}
-                id={van.id} />
-        ))
-    )
+    const filteredVans = typeFilter
+        ? vans.filter(van => van.type === typeFilter)
+        : vans
+
+    console.log(filteredVans)
+
+    const vanElements = filteredVans && filteredVans.map(van => (
+        <VanCard
+            key={van.id}
+            imageUrl={van.imageUrl}
+            name={van.name}
+            price={van.price}
+            type={van.type}
+            id={van.id} />
+    ))
 
     return (
         <section>
             <div className="van-list-container">
                 <h1>Explore our van options</h1>
-
+                <div className="van-type-filter-container">
+                    <Link className="van-type simple" to="?type=simple">Simple</Link>
+                    <Link className="van-type rugged" to="?type=rugged">Rugged</Link>
+                    <Link className="van-type luxury" to="?type=luxury">Luxury</Link>
+                    <Link className="van-type clear" to=".">Clear</Link>
+                </div>
                 <div className="van-list">
                     {vanElements}
                 </div>

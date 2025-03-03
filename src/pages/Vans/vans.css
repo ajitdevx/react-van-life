@@ -62,3 +62,16 @@ section {
 .van-type.luxury {
     background-color: #252525;
 }
+
+.van-type.clear {
+    background-color: gainsboro;
+    color: black;
+}
+
+.van-type-filter-container{
+    margin-block-start: 15px;
+}
+
+.van-type-filter-container a {
+    margin-inline-end: 25px;
+}
