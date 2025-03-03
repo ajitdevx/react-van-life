@@ -31,7 +31,9 @@ export default function Vans() {
             name={van.name}
             price={van.price}
             type={van.type}
-            id={van.id} />
+            id={van.id}
+            searchParams={searchParams}
+        />
     ));
 
     const handleFilterChange = (key, value) => {
@@ -65,7 +67,7 @@ export default function Vans() {
 function VanCard(props) {
     return (
         <div className="van-tile">
-            <Link to={props.id}>
+            <Link to={props.id} state={{ search: props.searchParams.toString(), type: props.searchParams.get("type") }}>
                 <img
                     alt={props.name}
                     src={props.imageUrl}

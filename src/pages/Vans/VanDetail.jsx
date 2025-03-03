@@ -1,20 +1,33 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router"
+import { useParams, Link, useLocation } from "react-router"
 import "./van-detail.css"
 
 export default function VanDetail() {
     const { id } = useParams()
     const [van, setVan] = useState(null)
+    const location = useLocation();
+    console.log(location)
 
     useEffect(() => {
         fetch(`/api/vans/${id}`)
             .then(res => res.json())
             .then(data => setVan(data.vans))
-    }, [id])
+    }, [id]);
+
+    const type = location?.state?.type ? location?.state?.type : 'all';
+
+    const backToAllVans = location?.state?.search
+        ? `..?${location.state.search}`
+        : '..'
+
+    console.log(backToAllVans)
 
     return (
         <section>
             <div className="van-detail-container">
+                <div>
+                    <Link to={backToAllVans} relative="path" className="link-go-back">&larr; Back to {type} vans</Link>
+                </div>
                 {
                     van ?
                         (
