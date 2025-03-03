@@ -1,17 +1,18 @@
-import { useEffect, useState } from "react"
-import { Link } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import "./index.css"
+import { getHostVans } from "../../api";
+import { requireAuth } from "../../utils";
+
+export const loader = async ({ request }) => {
+    console.log(request)
+    await requireAuth();
+    return await getHostVans();
+}
 
 export default function Vans() {
-    const [vans, setVans] = useState([]);
+    const vans = useLoaderData();
 
-    useEffect(() => {
-        fetch("/api/host/vans")
-            .then(response => response.json())
-            .then(data => setVans(data.vans))
-    }, []);
-
-    const vanElements = vans.length > 0 ? vans.map(van => (
+    const vanElements = (vans && vans.length > 0) ? vans.map(van => (
         <VanList key={van.id} imageUrl={van.imageUrl} name={van.name} id={van.id} price={van.price} />
     )) : (<h2>Loading</h2>)
 
