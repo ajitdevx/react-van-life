@@ -1,13 +1,27 @@
-import React from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router"
+import { loginUser } from "../../api"
 import "./login.css"
 
+
+export function loginLoader({ request }) {
+    console.log(request)
+}
+
 export default function Login() {
-    const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
+    const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" });
+    const [status, setStatus] = useState('idle');
+    const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(loginFormData)
+        setStatus('submitting')
+        setError(null)
+        loginUser(loginFormData)
+            .then(navigate("/", { replace: true }))
+            .catch(err => setError(err))
+            .finally(() => setStatus('idle'))
     }
 
     function handleChange(e) {
@@ -21,6 +35,7 @@ export default function Login() {
     return (
         <div className="login-container">
             <h1>Sign in to your account</h1>
+            {error && <h2>{error.message}</h2>}
             <form onSubmit={handleSubmit} className="login-form">
                 <input
                     name="email"
@@ -36,7 +51,7 @@ export default function Login() {
                     placeholder="Password"
                     value={loginFormData.password}
                 />
-                <button>Log in</button>
+                <button disabled={status === 'submitting' ? true : false}>Log in</button>
             </form>
         </div>
     )
