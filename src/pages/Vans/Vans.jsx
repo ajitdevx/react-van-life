@@ -65,7 +65,7 @@ export default function Vans() {
 function VanCard(props) {
     return (
         <div className="van-tile">
-            <Link to={`/vans/${props.id}`}>
+            <Link to={props.id}>
                 <img
                     alt={props.name}
                     src={props.imageUrl}

@@ -43,7 +43,7 @@ function VanList({ imageUrl, name, price, id }) {
                     <span>${price}</span>/day
                 </p>
             </div>
-            <Link to={`/host/vans/${id}`}>Edit</Link>
+            <Link to={id}>Edit</Link>
         </div>
     )
 }
