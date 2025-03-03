@@ -59,6 +59,11 @@ header nav a:hover {
     color: #161616;
 }
 
+header .login-icon {
+    height: 20px;
+    width: 20px;
+}
+
 footer {
     background-color: #252525;
     height: 70px;
