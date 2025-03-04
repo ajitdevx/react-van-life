@@ -15,7 +15,7 @@ import HostLayout from "./components/Layout/HostLayout"
 import Reviews from "./pages/Host/Reviews"
 import NotFound from "./pages/NotFound/NotFound"
 import Error from "./components/Error"
-import Login, { loginLoader } from "./pages/Login/Login"
+import Login, { loginLoader, loginAction } from "./pages/Login/Login"
 import { requireAuth } from "./utils"
 
 
@@ -39,7 +39,7 @@ const router = createBrowserRouter(
         </Route>
         <Route path="reviews" element={<Reviews />} loader={requireAuth} />
       </Route>
-      <Route path="login" element={<Login />} loader={loginLoader} />
+      <Route path="login" element={<Login />} loader={loginLoader} action={loginAction} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
