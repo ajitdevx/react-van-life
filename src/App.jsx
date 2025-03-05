@@ -7,7 +7,7 @@ import VanDetail, { loader as vanDetailLoader } from "./pages/Vans/VanDetail"
 import Layout from "./components/Layout/Layout"
 
 import "./server"
-import Dashboard from "./pages/Host/Dashboard"
+import Dashboard, {loader as hostDashboardLoader} from "./pages/Host/Dashboard"
 import Income from "./pages/Host/Income"
 import HostVans, { loader as hostVansLoader } from "./pages/Host/Vans"
 import HostVanDetail, { loader as hostVanDetailLoader, HostVanInfo, HostVanPricing, HostVanPhoto } from "./pages/Host/VanDetail"
@@ -28,7 +28,7 @@ const router = createBrowserRouter(
       <Route path="vans/:id" element={<VanDetail />} loader={vanDetailLoader} />
 
       <Route path="/host" element={<HostLayout />} errorElement={<Error />} loader={requireAuth}>
-        <Route index element={<Dashboard />} loader={requireAuth} />
+        <Route index element={<Dashboard />} loader={hostDashboardLoader} />
         <Route path="income" element={<Income />} loader={requireAuth} />
         <Route path="vans" element={<HostVans />} loader={hostVansLoader} />
 

@@ -1,11 +1,16 @@
 import { Link, NavLink } from "react-router"
 import LoginAvatar from "../../assets/images/avatar-icon.png"
+import { CiLogout } from "react-icons/ci";
 
 export default function Header() {
     const activeStyle = {
         color: '#161616',
         fontWeight: 'bold',
         textDecoration: 'underline'
+    }
+
+    function fakeLogOut() {
+        localStorage.removeItem("loggedin")
     }
 
     const handleActiveStyle = ({ isActive }) => {
@@ -34,6 +39,10 @@ export default function Header() {
                             />
                         </Link>
                     </li>
+                    <li>
+                        <button className="logout" onClick={fakeLogOut}><CiLogout /></button>
+                    </li>
+
                 </ul>
             </nav>
         </header>

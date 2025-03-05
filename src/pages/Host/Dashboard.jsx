@@ -1,6 +1,21 @@
+import { Link, useLoaderData } from "react-router";
 import "./index.css"
+import { getHostVans } from "../../api";
+import { requireAuth } from "../../utils";
+
+export const loader = async ({ request }) => {
+    console.log(request)
+    await requireAuth();
+    return await getHostVans();
+}
 
 export default function Dashboard() {
+    const vans = useLoaderData();
+
+    const vanElements = (vans && vans.length > 0) ? vans.map(van => (
+        <VanList key={van.id} imageUrl={van.imageUrl} name={van.name} id={van.id} price={van.price} />
+    )) : (<h2>Loading</h2>)
+
     return (
         <>
             <>
@@ -9,9 +24,9 @@ export default function Dashboard() {
                         <h2>Welcome</h2>
                         <div className="host-flex">
                             <p>
-                                Income last <a href="">30 days</a>
+                                Income last <span>30 days</span>
                             </p>
-                            <a href="">Details</a>
+                            <Link to="income">Details</Link>
                         </div>
                         <h1>$2,260</h1>
                     </div>
@@ -20,9 +35,9 @@ export default function Dashboard() {
                     <div className="host-dashboard-review">
                         <div className="host-flex">
                             <h4>
-                                Income last <a href="">30 days</a>
+                                Income last <span href="">30 days</span>
                             </h4>
-                            <a href="">Details</a>
+                            <Link to="reviews">Details</Link>
                         </div>
                     </div>
                 </section>
@@ -30,50 +45,31 @@ export default function Dashboard() {
                     <div className="host-dashboard-vans">
                         <div>
                             <h2 className="host-dashboard-van-title">Your listed vans</h2>
-                            <a href="">View All</a>
+                            <Link to="vans">View all</Link>
                         </div>
-                        <div className="host-vans-list">
-                            <img
-                                alt=""
-                                src="https://assets.scrimba.com/advanced-react/react-router/reliable-red.png"
-                            />
-                            <div>
-                                <h2>Modest Explorer</h2>
-                                <p className="van-price">
-                                    <span>$16</span>/day
-                                </p>
-                            </div>
-                            <a href="">Edit</a>
-                        </div>
-                        <div className="host-vans-list">
-                            <img
-                                alt=""
-                                src="https://assets.scrimba.com/advanced-react/react-router/reliable-red.png"
-                            />
-                            <div>
-                                <h2>Modest Explorer</h2>
-                                <p className="van-price">
-                                    <span>$16</span>/day
-                                </p>
-                            </div>
-                            <a href="">Edit</a>
-                        </div>
-                        <div className="host-vans-list">
-                            <img
-                                alt=""
-                                src="https://assets.scrimba.com/advanced-react/react-router/reliable-red.png"
-                            />
-                            <div>
-                                <h2>Modest Explorer</h2>
-                                <p className="van-price">
-                                    <span>$16</span>/day
-                                </p>
-                            </div>
-                            <a href="">Edit</a>
-                        </div>
+                        {vanElements}
                     </div>
                 </section>
             </>
         </>
+    )
+}
+
+
+function VanList({ imageUrl, name, price, id }) {
+    return (
+        <div className="host-vans-list">
+            <img
+                alt={name}
+                src={imageUrl}
+            />
+            <div>
+                <h2>{name}</h2>
+                <p className="van-price">
+                    <span>${price}</span>/day
+                </p>
+            </div>
+            <Link to={`vans/${id}`}>View</Link>
+        </div>
     )
 }
