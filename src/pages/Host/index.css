@@ -27,6 +27,7 @@
 .host-dashboard-hero,
 .host-dashboard-review,
 .host-dashboard-vans,
+.host-dashboard-income,
 .host-van-container {
     width: 60%;
     background-color: #FFEAD0;
@@ -35,27 +36,41 @@
     margin-block: 10px;
 }
 
-.host-dashboard-review {
-    background-color: #FFDDB2;
-}
-
 .host-dashboard-hero>*,
 .host-dashboard-review>*,
+.host-dashboard-income>*,
 .host-dashboard-vans>* {
     padding: 8px;
 }
 
-.host-dashboard-vans {
+.host-dashboard-vans,
+.host-dashboard-review,
+.host-dashboard-income {
     background-color: transparent;
 }
 
-.host-vans-list {
+.host-dashboard-review .review-star {
+    color: #ff8c38;
+}
+
+.host-dashboard-review img,
+.host-dashboard-income img {
+    width: 500px;
+}
+
+.host-vans-list,
+.transaction {
     background-color: #FFFFFF;
     gap: 15px;
     align-items: center;
     margin-bottom: 10px;
     border-radius: 5px;
     color: #161616;
+}
+
+.transaction {
+    padding: 15px;
+    display: flex;
 }
 
 .van-price {
@@ -78,9 +93,14 @@
 
 .host-dashboard-hero>div,
 .host-dashboard-review>div,
+.host-dashboard-income>div.top-text,
 .host-dashboard-vans>div {
     display: flex;
     justify-content: space-between;
+}
+
+div.review {
+    margin-bottom: 5px;
 }
 
 .host-dashboard-van-title {

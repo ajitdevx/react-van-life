@@ -22,7 +22,6 @@ export default function Vans() {
                 <div className="host-dashboard-vans">
                     <div>
                         <h2 className="host-dashboard-van-title">Your listed vans</h2>
-                        <a href="">View All</a>
                     </div>
                     {vanElements}
                 </div>
@@ -44,7 +43,7 @@ function VanList({ imageUrl, name, price, id }) {
                     <span>${price}</span>/day
                 </p>
             </div>
-            <Link to={id}>Edit</Link>
+            <Link to={id}>View</Link>
         </div>
     )
 }
